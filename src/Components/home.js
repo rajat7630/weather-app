@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from "./searchBar.js";
+import WeatherGraph from './weatherGraph.js';
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -11,6 +12,7 @@ class Home extends Component {
         return (
             <div>
                 <SearchBar />
+                <WeatherGraph />
             </div>
         )
     }

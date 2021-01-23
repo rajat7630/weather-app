@@ -44,7 +44,15 @@ class SearchBar extends Component {
                 <div>
                     <button
                         onClick={(eve) => {
-                            let currLocation=(pos)=>{
+                            let currLocation = (pos) => {
+                                fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&appid=eb9219860969f10dd7bfc2d91212ad98`)
+                                    .then(res => res.json())
+                                    .then(data => {
+                                        this.setState({
+                                            weatherStatus: data
+                                        })
+                                        console.log(data)
+                                    });
                                 console.log(pos);
                             }
                             navigator.geolocation.getCurrentPosition(currLocation);
