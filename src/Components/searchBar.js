@@ -16,13 +16,15 @@ class SearchBar extends Component {
                     weatherStatus: data
                 })
                 console.log(data)
+                this.props.updateWeatherData(data);
             });
     }
     render() {
         return (
-            <div>
-                <div>
+            <div className="w-full px-10 flex bg-blue-500 p-4">
+                <div className="flex-1 flex">
                     <input
+
                         placeholder="Enter a place"
                         type="text"
                         onChange={(eve) => {
@@ -30,19 +32,22 @@ class SearchBar extends Component {
                                 queryString: eve.target.value
                             })
                         }}
-                        className="text-xl text-gray-900 rounded-xl"
+                        className="text-l w-3/6 px-4 outline-none py-1 text-gray-900 rounded-full"
                     />
                     <button
+                        className="bg-blue-800 text-white focus:outline-none rounded-full text-l outline-none mx-4 px-4 py-1"
                         onClick={(eve) => {
                             console.log(eve);
                             this.suggestionHandler();
                         }}
                     >
                         Search
-                </button>
+                    </button>
                 </div>
-                <div>
+                <div className="float-right">
                     <button
+                        className="bg-blue-800 text-white focus:outline-none rounded-full text-l outline-none mx-4 px-4 py-1"
+
                         onClick={(eve) => {
                             let currLocation = (pos) => {
                                 fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&appid=eb9219860969f10dd7bfc2d91212ad98`)
@@ -51,7 +56,8 @@ class SearchBar extends Component {
                                         this.setState({
                                             weatherStatus: data
                                         })
-                                        console.log(data)
+                                        console.log(data);
+                                        this.props.updateWeatherData(data);
                                     });
                                 console.log(pos);
                             }
@@ -59,9 +65,9 @@ class SearchBar extends Component {
                         }}
                     >
                         Current Weather
-                </button>
+                        </button>
                 </div>
-            </div>
+            </div >
         )
     }
 }
