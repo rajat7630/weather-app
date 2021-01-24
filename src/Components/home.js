@@ -25,7 +25,7 @@ class Home extends Component {
     }
     render() {
         let dataCard = (this.state.weatherCard) ? < CityWeatherCard weatherData={this.state.weatherData} deleteCard={() => this.deleteCard()} /> : (null);
-        return (
+        return (    
             <div>
                 <SearchBar
                     updateWeatherData={(data) => {

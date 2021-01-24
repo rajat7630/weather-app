@@ -32,10 +32,10 @@ class SearchBar extends Component {
                                 queryString: eve.target.value
                             })
                         }}
-                        className="text-l w-3/6 px-4 outline-none py-1 text-gray-900 rounded-full"
+                        className="text-xl w-3/6 px-4 outline-none py-1 text-gray-900 rounded-full"
                     />
                     <button
-                        className="bg-blue-800 text-white focus:outline-none rounded-full text-l outline-none mx-4 px-4 py-1"
+                        className="bg-blue-800 text-white focus:outline-none rounded-full text-xl outline-none mx-4 px-4 py-1"
                         onClick={(eve) => {
                             console.log(eve);
                             this.suggestionHandler();
@@ -46,7 +46,7 @@ class SearchBar extends Component {
                 </div>
                 <div className="float-right">
                     <button
-                        className="bg-blue-800 text-white focus:outline-none rounded-full text-l outline-none mx-4 px-4 py-1"
+                        className="bg-blue-800 text-white focus:outline-none rounded-full text-xl outline-none mx-4 px-4 py-1"
 
                         onClick={(eve) => {
                             let currLocation = (pos) => {
